@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import CarViewer from "./CarViewer";
+import { withBasePath } from "./site-path";
 type Feature = "engine" | "interior" | "paint" | "wheels";
 const features: { id: Feature; title: string; text: string; x: string; y: string; icon: string }[] = [
   { id: "engine", title: "Двигатель", text: "Концепт F6 Boxer в объёме", x: "77%", y: "49%", icon: "engine" },
@@ -52,7 +53,7 @@ export default function Experience() {
     if (id !== "paint") document.getElementById("explore")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
   }
   return <main className="page-wrap" id="top">
-    <header className="site-header"><a className="brand" href="/" aria-label="NOEMA, к автомобилю"><span className="brand-symbol" aria-hidden="true">n</span>NOEMA</a></header>
+    <header className="site-header"><a className="brand" href={withBasePath("/")} aria-label="NOEMA, к автомобилю"><span className="brand-symbol" aria-hidden="true">n</span>NOEMA</a></header>
     <section className="intro" aria-labelledby="title"><div><h1 id="title">Porsche 911 Targa 4S</h1></div><p>Поверните, приблизьте, рассмотрите.</p></section>
     <section className={`scene-frame ${isDetail ? "scene-frame--detail" : ""}`} id="explore" aria-label="Интерактивный обзор Porsche">
       <div className="car-stage" hidden={isDetail}>
@@ -64,7 +65,7 @@ export default function Experience() {
       </div>
       {story && <div className={`system-scene ${mode === "engine" ? "system-scene--engine" : ""}`}>
         <div className={`system-visual ${mode === "engine" || mode === "wheels" ? "engine-visual" : "photo-visual"}`}>
-          {mode === "engine" ? <><span className="model-badge">F6 BOXER <span>Концепт</span></span><CarViewer key="engine" engine /></> : mode === "wheels" ? <><span className="model-badge">PORSCHE WHEEL <span>Обзор в 3D</span></span><CarViewer key="wheel" wheel /></> : <><Image key={photo.src} src={photo.src} alt={photo.alt} fill sizes="(max-width: 700px) 100vw, 65vw" className="detail-photo" loading="eager" /><p className="image-caption">{photo.title}<span>© Porsche AG</span></p></>}
+          {mode === "engine" ? <><span className="model-badge">F6 BOXER <span>Концепт</span></span><CarViewer key="engine" engine /></> : mode === "wheels" ? <><span className="model-badge">PORSCHE WHEEL <span>Обзор в 3D</span></span><CarViewer key="wheel" wheel /></> : <><Image key={photo.src} src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 700px) 100vw, 65vw" className="detail-photo" loading="eager" /><p className="image-caption">{photo.title}<span>© Porsche AG</span></p></>}
         </div>
         <div className="system-content"><button ref={back} className="back-button" onClick={close}>← К автомобилю</button><p className="eyebrow">{story.label}</p><h2>{story.title}</h2><p>{story.text}</p><div className="system-notes">{story.items.map(([title, text], index) => <button key={title} className="system-note" onClick={() => setNote(index)} aria-expanded={note === index}><span className="note-title">{title}<span aria-hidden="true">{note === index ? "−" : "+"}</span></span>{note === index && <span className="note-text">{text}</span>}</button>)}</div>{mode === "interior" && <span className="edition-note">На фото: 911 Targa 4S Heritage Design Edition</span>}</div>
       </div>}

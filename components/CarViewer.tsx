@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import type { ModelViewerElement } from "@google/model-viewer";
+import { withBasePath } from "./site-path";
 declare module "react" {
   // React custom elements are registered through JSX.
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -26,7 +27,7 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
   useEffect(() => {
     let active = true;
     import("@google/model-viewer").then(({ ModelViewerElement }) => {
-      ModelViewerElement.dracoDecoderLocation = "/draco/";
+      ModelViewerElement.dracoDecoderLocation = withBasePath("/draco/");
       if (active) setReady(true);
     }).catch(() => { if (active) setFailed(true); });
     return () => { active = false; };
@@ -70,6 +71,7 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
         decayTimer = window.setTimeout(() => { element.interpolationDecay = defaultDecay; }, 1800);
       }
     };
+    const mediaChange = () => fit();
     const home = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(() => fit(true)); };
     const down = (event: PointerEvent) => {
       if (event.composedPath().some((node) => node instanceof HTMLButtonElement)) return;
@@ -88,7 +90,7 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
     window.addEventListener("pointercancel", up, true);
     window.addEventListener("blur", blur);
     fit();
-    media.addEventListener("change", fit);
+    media.addEventListener("change", mediaChange);
     element.addEventListener("load", load);
     element.addEventListener("camera-change", rotate);
     element.addEventListener("error", error);
@@ -103,7 +105,7 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
       window.removeEventListener("pointerup", up, true);
       window.removeEventListener("pointercancel", up, true);
       window.removeEventListener("blur", blur);
-      media.removeEventListener("change", fit);
+      media.removeEventListener("change", mediaChange);
       element.removeEventListener("load", load);
       element.removeEventListener("camera-change", rotate);
       element.removeEventListener("error", error);
@@ -119,11 +121,11 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
     element.cameraOrbit = `${initialAngle}deg 79deg ${radius}%`;
   }
   return <div className={`model-shell ${engine ? "model-shell--engine" : wheel ? "model-shell--wheel" : ""}`}>
-    {ready && <model-viewer key={attempt} ref={viewer} src={engine ? "/models/f6-boxer-engine.glb" : wheel ? "/models/porsche-wheel.glb" : "/models/porsche-911.glb"}
+    {ready && <model-viewer key={attempt} ref={viewer} src={withBasePath(engine ? "/models/f6-boxer-engine.glb" : wheel ? "/models/porsche-wheel.glb" : "/models/porsche-911.glb")}
       alt={engine ? "Концептуальный двигатель F6 Boxer от Scuderia Morello. Вращайте мышью или стрелками." : wheel ? "Колесо Porsche. Рассмотрите лицевую сторону и профиль шины." : "Porsche 911 Targa 4S. Вращайте мышью, пальцем или стрелками."}
       camera-controls disable-pan disable-zoom
       camera-orbit={orbit(initialAngle)} min-camera-orbit={engine ? "auto 30deg 0m" : wheel ? "-65deg 65deg 0m" : "-95deg 79deg 0m"} max-camera-orbit={engine ? "auto 100deg auto" : wheel ? "65deg 95deg auto" : "95deg 79deg auto"}
-      environment-image="/lighting/studio-small-09-1k.hdr" tone-mapping="aces"
+      environment-image={withBasePath("/lighting/studio-small-09-1k.hdr")} tone-mapping="aces"
       interaction-prompt="none" touch-action="pan-y" exposure={engine ? "0.9" : wheel ? "1.1" : "1"} shadow-intensity="1.15" shadow-softness="0.85">{children}</model-viewer>}
     {!loaded && <div className="model-loading" role="status"><span>{failed ? "Не удалось загрузить модель" : `Загружаем ${engine ? "двигатель" : wheel ? "колесо" : "Porsche"} · ${progress}%`}</span>{failed && <button onClick={() => { setFailed(false); setAttempt((n) => n + 1); }}>Попробовать снова</button>}</div>}
     {loaded && !engine && !wheel && <label className="zoom-controls">
