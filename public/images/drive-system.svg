@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">NOEMA axial drive assembly</title>
+  <desc id="desc">Original isometric technical illustration of an electric motor, inverter, reduction gear and half shafts.</desc>
+  <defs>
+    <linearGradient id="steelTop" x1="384" y1="222" x2="722" y2="521" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66636A"/><stop offset=".29" stop-color="#3A3941"/><stop offset=".7" stop-color="#22232B"/><stop offset="1" stop-color="#11151B"/>
+    </linearGradient>
+    <linearGradient id="steelFace" x1="268" y1="303" x2="605" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#44454D"/><stop offset=".44" stop-color="#282A32"/><stop offset="1" stop-color="#11141B"/>
+    </linearGradient>
+    <linearGradient id="metalSide" x1="553" y1="323" x2="718" y2="529" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#323740"/><stop offset="1" stop-color="#0F1218"/>
+    </linearGradient>
+    <linearGradient id="brightSteel" x1="287" y1="362" x2="571" y2="489" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C0ADA0"/><stop offset=".2" stop-color="#77787B"/><stop offset=".54" stop-color="#D0BEB1"/><stop offset="1" stop-color="#5A5961"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="497" y1="239" x2="912" y2="463" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4D5B4"/><stop offset=".32" stop-color="#C88966"/><stop offset=".66" stop-color="#885844"/><stop offset="1" stop-color="#E0AE88"/>
+    </linearGradient>
+    <linearGradient id="copperDim" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#AB7158"/><stop offset="1" stop-color="#513C38"/>
+    </linearGradient>
+    <radialGradient id="dial" cx="0" cy="0" r="1" gradientTransform="translate(373 421) rotate(112) scale(101 107)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6F5148"/><stop offset=".26" stop-color="#35323A"/><stop offset=".78" stop-color="#161B21"/><stop offset="1" stop-color="#715748"/>
+    </radialGradient>
+    <filter id="softShadow" x="76" y="449" width="1055" height="245" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <pattern id="fineHatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+      <path d="M0 0V10" stroke="#F4E7D7" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- The mechanics float above the drawing plane; no backdrop is baked into the asset. -->
+  <ellipse cx="605" cy="573" rx="456" ry="48" fill="#000" opacity=".37" filter="url(#softShadow)"/>
+
+  <!-- Fine construction marks and editorial callouts. -->
+  <g stroke="#BCA18E" stroke-opacity=".19" stroke-width="1">
+    <path d="M103 577H1090" stroke-dasharray="4 9"/>
+    <path d="M142 560v34M304 563v24M530 567v24M750 564v24M963 557v29"/>
+    <path d="M187 241 1001 568M160 494 985 157" stroke-dasharray="3 13"/>
+    <circle cx="591" cy="380" r="245" stroke-dasharray="3 15"/>
+  </g>
+  <g fill="#DCC7B0" font-family="Arial, Helvetica, sans-serif" letter-spacing="2.5">
+    <text x="93" y="113" font-size="14" font-weight="600" opacity=".72">01 / INTEGRATED DRIVE</text>
+    <text x="93" y="135" font-size="9" opacity=".46">AXIAL MOTOR · INVERTER · REDUCTION</text>
+    <text x="939" y="106" font-size="10" opacity=".65">FRONT AXLE</text>
+    <text x="939" y="123" font-size="9" opacity=".43">N / 04—D</text>
+  </g>
+
+  <!-- Through-shaft, knuckles and couplings. -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M117 491 416 354" stroke="#100F13" stroke-width="49"/>
+    <path d="M117 491 416 354" stroke="url(#brightSteel)" stroke-width="31"/>
+    <path d="M117 491 416 354" stroke="#E4C5A9" stroke-opacity=".55" stroke-width="2"/>
+    <path d="M747 423 1090 269" stroke="#0D0D12" stroke-width="51"/>
+    <path d="M747 423 1090 269" stroke="url(#brightSteel)" stroke-width="31"/>
+    <path d="M747 423 1090 269" stroke="#F7DDC0" stroke-opacity=".53" stroke-width="2"/>
+    <g transform="translate(119 490) rotate(-24)">
+      <ellipse rx="27" ry="39" fill="#1C1C22" stroke="#D3AD8D" stroke-width="2"/>
+      <ellipse rx="14" ry="27" fill="#171A20" stroke="#E5D2BC" stroke-opacity=".72" stroke-width="2"/>
+      <ellipse rx="5" ry="16" fill="#8E6957"/>
+    </g>
+    <g transform="translate(1082 271) rotate(-24)">
+      <ellipse rx="33" ry="46" fill="#24242A" stroke="#DAAF89" stroke-width="2.5"/>
+      <ellipse rx="22" ry="36" fill="#1C2027" stroke="#F0D7B9" stroke-opacity=".66" stroke-width="2"/>
+      <ellipse rx="8" ry="21" fill="#A4785F"/>
+    </g>
+    <path d="M216 445 237 482M245 432 266 469M904 340 928 376M937 325 960 360" stroke="#3A2726" stroke-width="14"/>
+    <path d="M216 445 237 482M245 432 266 469M904 340 928 376M937 325 960 360" stroke="#E0A984" stroke-opacity=".67" stroke-width="2"/>
+  </g>
+
+  <!-- The cast cradle projects below the two machined power units. -->
+  <path d="m308 430 239-115 325 103-247 137-317-91Z" fill="url(#steelTop)" stroke="#A58974" stroke-opacity=".79" stroke-width="2"/>
+  <path d="m308 464 317 91v39l-317-91Z" fill="#151920" stroke="#B8977F" stroke-opacity=".6" stroke-width="1.7"/>
+  <path d="m625 555 247-137v38L625 594Z" fill="url(#metalSide)" stroke="#B8977F" stroke-opacity=".69" stroke-width="1.7"/>
+  <path d="m345 469 271 78 229-123" stroke="#E8C3A2" stroke-opacity=".32" stroke-width="1.2"/>
+  <path d="m333 492 285 83m21 1 210-116" stroke="#EBCFB2" stroke-opacity=".14"/>
+  <path d="m358 475 76 22m-48-5 2 17m68-5 76 22m117 26 83-46m-63 38 8 17" stroke="#AD7B61" stroke-opacity=".45" stroke-width="2"/>
+  <g fill="#D1A789" stroke="#31272A" stroke-width="2">
+    <circle cx="340" cy="469" r="5"/><circle cx="482" cy="514" r="5"/><circle cx="627" cy="557" r="5"/>
+    <circle cx="852" cy="430" r="5"/><circle cx="704" cy="501" r="5"/>
+  </g>
+
+  <!-- Motor barrel: stepped casing, copper stator ring and the eccentric rotor face. -->
+  <path d="M298 356 481 273c57-16 124 23 139 74L428 445c-2-53-60-102-130-89Z" fill="url(#steelTop)" stroke="#E0BE9E" stroke-opacity=".75" stroke-width="2"/>
+  <path d="M428 445 620 347l-7 97-190 95-10-40Z" fill="url(#steelFace)" stroke="#C89879" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M302 353 485 273c14-4 28-4 41-2L346 355" fill="#D2BBAB" opacity=".09"/>
+  <path d="M330 360 493 286M364 375 527 302M393 398 561 320" stroke="#E4D4C1" stroke-opacity=".15" stroke-width="3"/>
+  <path d="M328 470 509 385M346 497 527 412M376 516 552 431" stroke="#EBC6A7" stroke-opacity=".1" stroke-width="2"/>
+  <path d="M432 349 438 463M459 333l8 111M487 317l9 112M516 304l8 107M542 294l10 105" stroke="#15171E" stroke-opacity=".75" stroke-width="7"/>
+  <path d="M432 349 438 463M459 333l8 111M487 317l9 112M516 304l8 107M542 294l10 105" stroke="#B9967E" stroke-opacity=".64" stroke-width="1.4"/>
+  <path d="M422 354 409 383l23 30 12-28Zm44-21-11 29 23 30 12-28Zm46-22-12 28 23 29 12-27Z" fill="url(#copperDim)" stroke="#D4A682" stroke-opacity=".65"/>
+  <path d="M315 354c-39 3-72 27-77 62-7 49 39 103 97 119 58 17 107-10 114-59 9-54-45-115-104-122-11-2-21-2-30 0Z" fill="url(#brightSteel)" stroke="#E5C6A7" stroke-width="2"/>
+  <path d="M317 363c-34 3-62 25-67 55-6 43 35 91 87 105 52 14 97-8 103-50 8-49-40-103-94-110-10-1-19-1-29 0Z" fill="url(#dial)" stroke="#19191D" stroke-width="6"/>
+  <path d="M319 373c-28 3-51 22-55 48-6 36 30 76 74 88 46 13 86-6 92-44 6-41-36-86-84-92-9-1-18-1-27 0Z" stroke="#D8A987" stroke-opacity=".85" stroke-width="2"/>
+  <path d="M328 391c-18 2-34 15-37 34-4 26 21 55 53 64 33 9 61-5 65-31 5-29-25-62-60-66-8-1-15-1-21-1Z" fill="#10161C" stroke="#A47C69" stroke-width="2"/>
+  <path d="M335 407c-13 2-24 12-26 25-3 18 15 38 38 44 23 7 43-3 46-22 3-20-18-44-43-47-6-1-11-1-15 0Z" fill="#503F3D" stroke="#F0C8A1" stroke-width="2"/>
+  <path d="M343 421c-7 2-12 7-13 14-1 10 9 21 21 24 13 4 23-2 25-12 2-11-10-24-23-26-4-1-7-1-10 0Z" fill="#16191E" stroke="#B99A83" stroke-width="1.5"/>
+  <g fill="#F6D7B2" opacity=".82">
+    <circle cx="315" cy="385" r="3"/><circle cx="281" cy="414" r="3"/><circle cx="276" cy="451" r="3"/>
+    <circle cx="303" cy="489" r="3"/><circle cx="353" cy="514" r="3"/><circle cx="400" cy="503" r="3"/><circle cx="427" cy="468" r="3"/>
+  </g>
+  <path d="m260 428 29 8m15-50 20 23m69-18 5 26m-7 82-15-18m-77 5 16-19" stroke="#F7DDBB" stroke-opacity=".31" stroke-width="2"/>
+
+  <!-- Raised inverter box, with cooling fins and recessed service lid. -->
+  <path d="m516 286 147-75 192 64-150 85Z" fill="url(#steelTop)" stroke="#F1CFAC" stroke-opacity=".85" stroke-width="2"/>
+  <path d="m516 286 189 74v90l-189-70Z" fill="url(#steelFace)" stroke="#CF9F7F" stroke-opacity=".76" stroke-width="2"/>
+  <path d="m705 360 150-85v91l-150 84Z" fill="url(#metalSide)" stroke="#C89978" stroke-opacity=".8" stroke-width="2"/>
+  <path d="m545 291 123-61 151 50-124 69Z" fill="#161C22" stroke="#C8A486" stroke-opacity=".7" stroke-width="1.5"/>
+  <path d="m556 289 112-55 139 47-112 63Z" fill="url(#fineHatch)"/>
+  <path d="m567 293 105-49 119 39-105 57Z" stroke="#E7C8AA" stroke-opacity=".44"/>
+  <path d="m609 273 93 31m-77-40 94 31m-76-40 94 31" stroke="#D7A783" stroke-opacity=".58" stroke-width="2"/>
+  <path d="m532 313 162 64m-162-49 162 64m-162-49 162 64m-162-49 162 64" stroke="#0D1117" stroke-opacity=".73" stroke-width="8"/>
+  <path d="m532 313 162 64m-162-49 162 64m-162-49 162 64m-162-49 162 64" stroke="#D5AF8E" stroke-opacity=".48" stroke-width="1.2"/>
+  <path d="m713 372 128-73m-128 89 128-73m-128 89 128-73m-128 89 128-73" stroke="#080C11" stroke-width="7"/>
+  <path d="m713 372 128-73m-128 89 128-73m-128 89 128-73m-128 89 128-73" stroke="#B48B71" stroke-opacity=".4"/>
+  <path d="m523 376 177 68M712 446l137-79" stroke="#F4D4B1" stroke-opacity=".43" stroke-width="2"/>
+  <g fill="#E6B991">
+    <circle cx="535" cy="294" r="3.7"/><circle cx="666" cy="222" r="3.7"/><circle cx="842" cy="279" r="3.7"/><circle cx="702" cy="354" r="3.7"/>
+  </g>
+  <path d="m594 311 49 19m104-31 35-20" stroke="url(#copper)" stroke-width="5" stroke-linecap="round"/>
+  <path d="m663 331 26 10" stroke="#F9DDBD" stroke-width="2"/>
+
+  <!-- Reduction gear casing, cast ribs and high-voltage copper bus. -->
+  <path d="m714 405 102-55 81 36v79l-106 60-77-32Z" fill="url(#steelFace)" stroke="#DEAF8E" stroke-width="2"/>
+  <path d="m714 405 101-55 82 36-102 56Z" fill="url(#steelTop)" stroke="#F2D3AF" stroke-opacity=".78" stroke-width="1.6"/>
+  <path d="m795 442 102-56v79l-102 60Z" fill="#242630" stroke="#A77D67" stroke-width="1.5"/>
+  <path d="m728 418 65 28v58l-65-25Z" fill="#171D24" stroke="#AB8069" stroke-width="1.4"/>
+  <path d="m734 425 52 21m-52-7 52 21m-52-7 52 21m-52-7 52 21" stroke="#B58A70" stroke-opacity=".48" stroke-width="2"/>
+  <path d="m803 450 85-47m-85 63 85-47m-85 63 85-47m-85 63 85-47" stroke="#D5A27B" stroke-opacity=".45" stroke-width="2"/>
+  <path d="M590 439c64 9 83 19 109 32 22 11 47 27 73 22" stroke="#1C1518" stroke-width="20" stroke-linecap="round"/>
+  <path d="M590 439c64 9 83 19 109 32 22 11 47 27 73 22" stroke="url(#copper)" stroke-width="13" stroke-linecap="round"/>
+  <path d="M590 439c64 9 83 19 109 32 22 11 47 27 73 22" stroke="#FFDAB5" stroke-opacity=".52" stroke-width="2" stroke-linecap="round"/>
+  <path d="m602 431-12 18m46-12-10 20m90 22-9 20" stroke="#2B2223" stroke-width="9"/>
+  <path d="m602 431-12 18m46-12-10 20m90 22-9 20" stroke="#ECC29D" stroke-opacity=".7" stroke-width="1.2"/>
+
+  <!-- Small exploded indication lines and fine index details. -->
+  <g stroke="#F0CFAD" stroke-width="1" stroke-opacity=".54" fill="none">
+    <path d="M402 281 460 250h69"/><circle cx="402" cy="281" r="3" fill="#F0CFAD"/>
+    <path d="M753 224 842 177h71"/><circle cx="753" cy="224" r="3" fill="#F0CFAD"/>
+    <path d="M854 478 921 516h115"/><circle cx="854" cy="478" r="3" fill="#F0CFAD"/>
+    <path d="M244 402 173 358H97"/><circle cx="244" cy="402" r="3" fill="#F0CFAD"/>
+  </g>
+  <g fill="#E3CAB3" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.7" opacity=".65">
+    <text x="463" y="244">COAXIAL STATOR</text>
+    <text x="845" y="172">SiC INVERTER</text>
+    <text x="923" y="512">9.8 : 1 GEARSET</text>
+    <text x="96" y="352">ROTOR / 01</text>
+  </g>
+  <g stroke="#DAAD8E" stroke-opacity=".6" stroke-width="1.2">
+    <path d="M99 606h46m-23-10v20M1054 606h46m-23-10v20"/>
+    <path d="M184 635h832" stroke-opacity=".25"/>
+  </g>
+  <text x="600" y="649" text-anchor="middle" fill="#C5AD9A" opacity=".4" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="4">NOEMA  /  ELECTRIC DRIVE ARCHITECTURE</text>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">NOEMA structural battery platform</title>
+  <desc id="desc">Original isometric technical illustration of a thin skateboard battery enclosure with a precise cell array and copper high-voltage routing.</desc>
+  <defs>
+    <linearGradient id="lid" x1="296" y1="272" x2="963" y2="537" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#45434A"/><stop offset=".33" stop-color="#282B31"/><stop offset=".75" stop-color="#171D23"/><stop offset="1" stop-color="#0E1219"/>
+    </linearGradient>
+    <linearGradient id="frontWall" x1="243" y1="394" x2="652" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#414148"/><stop offset=".5" stop-color="#252830"/><stop offset="1" stop-color="#111720"/>
+    </linearGradient>
+    <linearGradient id="rightWall" x1="1024" y1="368" x2="674" y2="629" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#30333A"/><stop offset=".5" stop-color="#1B222A"/><stop offset="1" stop-color="#11151C"/>
+    </linearGradient>
+    <linearGradient id="cellFill" x1="0" y1="0" x2="83" y2="121" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#43474B"/><stop offset=".25" stop-color="#2D3237"/><stop offset=".75" stop-color="#1B2229"/><stop offset="1" stop-color="#101920"/>
+    </linearGradient>
+    <linearGradient id="cellWarm" x1="0" y1="0" x2="83" y2="121" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7B5E4C"/><stop offset=".25" stop-color="#483A36"/><stop offset=".7" stop-color="#2F2D30"/><stop offset="1" stop-color="#162028"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F2D1AA"/><stop offset=".35" stop-color="#CE8B63"/><stop offset=".72" stop-color="#7B5040"/><stop offset="1" stop-color="#DDB18B"/>
+    </linearGradient>
+    <filter id="shadow" x="70" y="430" width="1070" height="270" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="23"/>
+    </filter>
+    <g id="cell">
+      <rect width="83" height="121" rx="6" fill="url(#cellFill)" stroke="#C8AB91" stroke-opacity=".67" stroke-width="3"/>
+      <rect x="7" y="8" width="69" height="105" rx="3" fill="none" stroke="#DED1BF" stroke-opacity=".32" stroke-width="2"/>
+      <path d="M8 96h67M11 17h60" stroke="#F0DBBE" stroke-opacity=".24" stroke-width="3"/>
+      <path d="M14 26v58m12-58v58m12-58v58m12-58v58m12-58v58" stroke="#121B22" stroke-opacity=".62" stroke-width="3"/>
+      <circle cx="17" cy="104" r="3" fill="#B9876E"/>
+      <circle cx="66" cy="104" r="3" fill="#B9876E"/>
+    </g>
+    <g id="row">
+      <use href="#cell" x="90"/><use href="#cell" x="184"/><use href="#cell" x="278"/>
+      <use href="#cell" x="372"/><use href="#cell" x="466"/><use href="#cell" x="560"/>
+      <use href="#cell" x="654"/><use href="#cell" x="748"/><use href="#cell" x="842"/>
+    </g>
+  </defs>
+
+  <ellipse cx="606" cy="569" rx="471" ry="54" fill="#000" opacity=".37" filter="url(#shadow)"/>
+
+  <!-- Dimensional guides and drawing identification. -->
+  <g stroke="#D6B89E" stroke-opacity=".19" stroke-width="1" fill="none">
+    <path d="M100 609h1015" stroke-dasharray="4 9"/>
+    <path d="M155 592v32M352 592v32M618 593v32M875 592v32M1051 592v32"/>
+    <path d="M177 268 1067 603M130 555 914 187" stroke-dasharray="3 13"/>
+    <path d="M267 159h686M267 159v20M953 159v20"/>
+  </g>
+  <g fill="#DCC7B0" font-family="Arial, Helvetica, sans-serif" letter-spacing="2.5">
+    <text x="91" y="107" font-size="14" font-weight="600" opacity=".73">02 / STRUCTURAL ENERGY</text>
+    <text x="91" y="130" font-size="9" opacity=".47">MODULAR CELL ARRAY · LIQUID CONDITIONING</text>
+    <text x="944" y="106" font-size="10" opacity=".64">FLAT PACK</text>
+    <text x="944" y="123" font-size="9" opacity=".44">N / 08—B</text>
+  </g>
+
+  <!-- Extruded low profile enclosure. -->
+  <path d="m185 374 435 181 415-179-435-182Z" fill="url(#lid)" stroke="#DAB696" stroke-opacity=".82" stroke-width="2"/>
+  <path d="m185 374 435 181v57L185 430Z" fill="url(#frontWall)" stroke="#C59F83" stroke-opacity=".78" stroke-width="2"/>
+  <path d="m620 555 415-179v56L620 612Z" fill="url(#rightWall)" stroke="#C8A488" stroke-opacity=".78" stroke-width="2"/>
+  <path d="m187 395 432 181 415-177" stroke="#F4D2AC" stroke-opacity=".22" stroke-width="2"/>
+  <path d="m186 418 433 181 414-180" stroke="#B78E72" stroke-opacity=".45" stroke-width="1.4"/>
+
+  <!-- Structural rim and visible cooled cell array. The transform is a true isometric plane. -->
+  <g transform="matrix(.415 -.18 .435 .182 185 374)">
+    <rect x="40" y="44" width="920" height="912" rx="22" fill="#121B22" stroke="#D1AB8A" stroke-width="12"/>
+    <rect x="62" y="65" width="876" height="870" rx="13" fill="#20262C" stroke="#6F5F56" stroke-width="7"/>
+    <path d="M80 73H926M80 927H926M78 75v849M926 75v849" stroke="#E7D2BB" stroke-opacity=".34" stroke-width="6"/>
+    <use href="#row" y="100"/>
+    <use href="#row" y="235"/>
+    <use href="#row" y="370"/>
+    <use href="#row" y="505"/>
+    <use href="#row" y="640"/>
+    <use href="#row" y="775"/>
+    <!-- An exposed service pair shows the copper path entering the cell matrix. -->
+    <rect x="466" y="370" width="83" height="121" rx="6" fill="url(#cellWarm)" stroke="#F0C9A2" stroke-width="3"/>
+    <rect x="473" y="378" width="69" height="105" rx="3" fill="none" stroke="#F5D9B8" stroke-opacity=".72" stroke-width="2"/>
+    <path d="M483 387v79m12-79v79m12-79v79m12-79v79m12-79v79" stroke="#D89E78" stroke-opacity=".62" stroke-width="3"/>
+    <rect x="560" y="370" width="83" height="121" rx="6" fill="url(#cellWarm)" stroke="#E8B58C" stroke-width="3"/>
+    <rect x="567" y="378" width="69" height="105" rx="3" fill="none" stroke="#F5D9B8" stroke-opacity=".6" stroke-width="2"/>
+    <path d="M577 387v79m12-79v79m12-79v79m12-79v79m12-79v79" stroke="#D89E78" stroke-opacity=".52" stroke-width="3"/>
+    <path d="M75 493H934M75 628H934" stroke="#B88A6C" stroke-opacity=".5" stroke-width="7"/>
+    <path d="M75 95V910M942 95V910" stroke="#0B1217" stroke-width="13"/>
+    <path d="M75 95V910M942 95V910" stroke="#D1A480" stroke-opacity=".7" stroke-width="4"/>
+    <!-- Service bus: twin copper channels, insulated couplings and terminals. -->
+    <path d="M71 919H940" stroke="#120F12" stroke-width="23" stroke-linecap="round"/>
+    <path d="M71 919H940" stroke="url(#copper)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M71 919H940" stroke="#FFE0BC" stroke-opacity=".63" stroke-width="2" stroke-linecap="round"/>
+    <path d="M944 95V915" stroke="#120F12" stroke-width="21" stroke-linecap="round"/>
+    <path d="M944 95V915" stroke="url(#copper)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M944 95V915" stroke="#FFDEBA" stroke-opacity=".49" stroke-width="2"/>
+    <path d="M97 911v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18" stroke="#221B1C" stroke-width="12"/>
+    <path d="M97 911v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18m94-18v18" stroke="#F0C5A0" stroke-opacity=".55" stroke-width="3"/>
+    <g fill="#E9BE96" stroke="#3B2926" stroke-width="4">
+      <circle cx="75" cy="91" r="13"/><circle cx="940" cy="90" r="13"/>
+      <circle cx="75" cy="919" r="13"/><circle cx="940" cy="919" r="13"/>
+    </g>
+    <g fill="#FFE3BE" opacity=".62">
+      <circle cx="75" cy="91" r="4"/><circle cx="940" cy="90" r="4"/>
+      <circle cx="75" cy="919" r="4"/><circle cx="940" cy="919" r="4"/>
+    </g>
+  </g>
+
+  <!-- Front extrusion: cooling channels, load ribs and fasteners. -->
+  <path d="m209 416 385 161m-383-145 383 160" stroke="#0D151D" stroke-width="7" stroke-linecap="round"/>
+  <path d="m209 416 385 161m-383-145 383 160" stroke="#D9B594" stroke-opacity=".37" stroke-width="1.5"/>
+  <g stroke="#9E7C68" stroke-opacity=".7" stroke-width="2">
+    <path d="m246 437 2 25m37-9 2 24m36-8 2 24m37-8 2 24m36-7 2 25m37-8 2 25m37-8 2 24m37-8 2 24m36-8 2 24"/>
+    <path d="m277 450 3 22m76 10 3 22m76 10 3 22m75 10 3 22" stroke="#F1D5B4" stroke-opacity=".5" stroke-width="1"/>
+  </g>
+  <path d="m636 572 377-163m-377 181 377-163" stroke="#0C141C" stroke-width="7" stroke-linecap="round"/>
+  <path d="m636 572 377-163m-377 181 377-163" stroke="#D5AE8C" stroke-opacity=".4" stroke-width="1.5"/>
+  <g stroke="#A4816B" stroke-opacity=".67" stroke-width="2">
+    <path d="m673 568 2 23m39-42 2 23m39-42 2 23m39-42 2 23m39-42 2 23m39-42 2 23m39-42 2 23m39-42 2 23"/>
+  </g>
+  <g fill="#EDC49F" stroke="#29232A" stroke-width="1.5">
+    <circle cx="207" cy="415" r="4"/><circle cx="333" cy="468" r="4"/><circle cx="479" cy="528" r="4"/><circle cx="611" cy="584" r="4"/>
+    <circle cx="648" cy="568" r="4"/><circle cx="792" cy="505" r="4"/><circle cx="921" cy="450" r="4"/><circle cx="1019" cy="408" r="4"/>
+  </g>
+
+  <!-- Service connector and coolant interfaces on the front face. -->
+  <path d="m497 540 73 31v28l-73-29Z" fill="#111720" stroke="#E7B995" stroke-width="2"/>
+  <path d="m509 551 47 20v14l-47-19Z" fill="#493C39" stroke="#B78A6E"/>
+  <path d="m519 553 4 22m10-17 4 22m10-17 4 22" stroke="#EBC39D" stroke-opacity=".65" stroke-width="2"/>
+  <circle cx="425" cy="526" r="8" fill="#1C2228" stroke="#C99978" stroke-width="2"/>
+  <circle cx="454" cy="538" r="8" fill="#1C2228" stroke="#C99978" stroke-width="2"/>
+  <circle cx="425" cy="526" r="2" fill="#DFB791"/><circle cx="454" cy="538" r="2" fill="#DFB791"/>
+  <path d="m390 511 22 8m58 25 18 8" stroke="#E8B78E" stroke-opacity=".58"/>
+
+  <!-- Annotation pointers kept off the cells so the illustration can scale down. -->
+  <g stroke="#EAC6A3" stroke-opacity=".6" stroke-width="1" fill="none">
+    <path d="M354 304 278 260H112"/><circle cx="354" cy="304" r="3" fill="#EAC6A3"/>
+    <path d="M783 268 902 200h186"/><circle cx="783" cy="268" r="3" fill="#EAC6A3"/>
+    <path d="M951 390 1035 350h69"/><circle cx="951" cy="390" r="3" fill="#EAC6A3"/>
+    <path d="M550 573 615 642h197"/><circle cx="550" cy="573" r="3" fill="#EAC6A3"/>
+  </g>
+  <g fill="#E3C7AC" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.7" opacity=".68">
+    <text x="112" y="255">CELL FIELD / 54 UNITS</text>
+    <text x="905" y="196">STRUCTURAL UPPER LID</text>
+    <text x="1035" y="346">COPPER BUS</text>
+    <text x="621" y="638">SERVICE INTERFACE</text>
+  </g>
+  <path d="M103 650h48m-24-11v22M1049 650h48m-24-11v22" stroke="#D0A586" stroke-opacity=".57" stroke-width="1.2"/>
+  <text x="600" y="664" text-anchor="middle" fill="#C5AD9A" opacity=".4" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="4">NOEMA  /  ENERGY ARCHITECTURE</text>
+</svg>
