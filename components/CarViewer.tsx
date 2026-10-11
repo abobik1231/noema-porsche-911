@@ -4,8 +4,6 @@ import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import type { ModelViewerElement } from "@google/model-viewer";
 import { withBasePath } from "./site-path";
 declare module "react" {
-  // React custom elements are registered through JSX.
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX { interface IntrinsicElements {
     "model-viewer": DetailedHTMLProps<HTMLAttributes<ModelViewerElement>, ModelViewerElement> & { src: string; alt: string; exposure: string };
   } }
@@ -43,7 +41,29 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
     if (!element) return;
     const media = window.matchMedia("(max-width: 700px)");
     const load = () => {
-      if (!engine && !wheel && colorRef.current) element.model?.materials.filter((m) => m.name === "PAINT_COLOR_4").forEach((m) => m.pbrMetallicRoughness.setBaseColorFactor(colorRef.current!));
+      if (!engine && !wheel) element.model?.materials.forEach((material) => {
+        const surface = material.pbrMetallicRoughness;
+        if (material.name === "PAINT_COLOR_4") {
+          if (colorRef.current) surface.setBaseColorFactor(colorRef.current);
+          surface.setMetallicFactor(0.25);
+          surface.setRoughnessFactor(0.38);
+          material.setClearcoatFactor(0.35);
+          material.setClearcoatRoughnessFactor(0.3);
+          material.setSpecularFactor(0.65);
+        } else if (material.name.startsWith("modelSM_SoftTop_")) {
+          surface.setMetallicFactor(0);
+          surface.setRoughnessFactor(0.85);
+          material.setSpecularFactor(0.25);
+        } else if (material.name === "INTERIOR_12") {
+          surface.setRoughnessFactor(0.85);
+          material.setSpecularFactor(0.35);
+        } else if (material.name === "PLASTI_NEGRO_3") {
+          surface.metallicRoughnessTexture.setTexture(null);
+          surface.setMetallicFactor(0);
+          surface.setRoughnessFactor(0.55);
+          material.setSpecularFactor(0.45);
+        }
+      });
       setLoaded(true);
       setFailed(false);
     };
@@ -63,7 +83,6 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
       window.clearTimeout(decayTimer);
       element.interpolationDecay = returning && !reducedMotion ? 420 : defaultDecay;
       element.cameraOrbit = `${initialAngle}deg ${engine ? 68 : wheel ? 82 : 79}deg ${radius}%`;
-      // Dragging changes the live camera, but leaves the orbit attribute unchanged.
       element.requestUpdate("cameraOrbit");
       if (reducedMotion) {
         void element.updateComplete.then(() => element.jumpCameraToGoal());
@@ -125,8 +144,9 @@ export default function CarViewer({ color, onRotate, engine = false, wheel = fal
       alt={engine ? "Концептуальный двигатель F6 Boxer от Scuderia Morello. Вращайте мышью или стрелками." : wheel ? "Колесо Porsche. Рассмотрите лицевую сторону и профиль шины." : "Porsche 911 Targa 4S. Вращайте мышью, пальцем или стрелками."}
       camera-controls disable-pan disable-zoom
       camera-orbit={orbit(initialAngle)} min-camera-orbit={engine ? "auto 30deg 0m" : wheel ? "-65deg 65deg 0m" : "-95deg 79deg 0m"} max-camera-orbit={engine ? "auto 100deg auto" : wheel ? "65deg 95deg auto" : "95deg 79deg auto"}
-      environment-image={withBasePath("/lighting/studio-small-09-1k.hdr")} tone-mapping="aces"
-      interaction-prompt="none" touch-action="pan-y" exposure={engine ? "0.9" : wheel ? "1.1" : "1"} shadow-intensity="1.15" shadow-softness="0.85">{children}</model-viewer>}
+      environment-image={engine || wheel ? withBasePath("/lighting/studio-small-09-1k.hdr") : "neutral"} tone-mapping={engine || wheel ? "aces" : "neutral"}
+      interaction-prompt="none" touch-action="pan-y" exposure={engine ? "0.9" : wheel ? "1.1" : "0.72"}
+      shadow-intensity={engine || wheel ? "1.15" : "0.85"} shadow-softness={engine || wheel ? "0.85" : "1"}>{children}</model-viewer>}
     {!loaded && <div className="model-loading" role="status"><span>{failed ? "Не удалось загрузить модель" : `Загружаем ${engine ? "двигатель" : wheel ? "колесо" : "Porsche"} · ${progress}%`}</span>{failed && <button onClick={() => { setFailed(false); setAttempt((n) => n + 1); }}>Попробовать снова</button>}</div>}
     {loaded && !engine && !wheel && <label className="zoom-controls">
       <span>Масштаб</span>

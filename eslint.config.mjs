@@ -5,5 +5,9 @@ import nextTs from "eslint-config-next/typescript";
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    files: ["components/CarViewer.tsx"],
+    rules: { "@typescript-eslint/no-namespace": "off" },
+  },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "public/draco/**", "tmp/**"]),
 ]);
